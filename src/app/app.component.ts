@@ -1,10 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import liff from '@line/liff';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'test_project';
+export class AppComponent implements OnInit{
+
+  ngOnInit() {
+    liff.init({
+      liffId: "2005506236-JNw3MvnV", 
+    })
+    .then(() => {
+      if (!liff.isLoggedIn()) {
+        liff.login()
+      }
+    })
+    .catch((err) => {
+      console.log(err.code, err.message);
+    });
+  }
 }
