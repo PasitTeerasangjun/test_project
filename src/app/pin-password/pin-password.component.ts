@@ -14,7 +14,7 @@ export class PinPasswordComponent {
       this.pins[this.currentPinIndex] = num.toString();      
       this.currentPinIndex++;    
     } 
-    console.log(this.pins);
+    // console.log(this.pins);
    }
    removePin() {
     if (this.currentPinIndex > 0) {
