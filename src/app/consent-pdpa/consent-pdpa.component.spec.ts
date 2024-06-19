@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PinPasswordComponent } from './pin-password.component';
+import { ConsentPDPAComponent } from './consent-pdpa.component';
 
-describe('PinPasswordComponent', () => {
-  let component: PinPasswordComponent;
-  let fixture: ComponentFixture<PinPasswordComponent>;
+describe('ConsentPDPAComponent', () => {
+  let component: ConsentPDPAComponent;
+  let fixture: ComponentFixture<ConsentPDPAComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PinPasswordComponent ]
+      declarations: [ ConsentPDPAComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PinPasswordComponent);
+    fixture = TestBed.createComponent(ConsentPDPAComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

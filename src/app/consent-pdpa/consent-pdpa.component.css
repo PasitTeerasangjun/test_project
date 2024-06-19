@@ -1,0 +1,151 @@
+.background {
+    width: 100%;
+    height: 712px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 328px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+
+.div-img {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+img {
+    width: 100%;
+}
+
+.paragraph p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #575758;
+
+}
+
+.container-paragraph {
+    width: 100%;
+    height: 54px;
+    top: 388px;
+    left: 16px;
+    gap: 8px;
+    border-radius: 4px;
+    opacity: 0px;
+    background-color: #F1F8FE;
+}
+
+.container-paragraph p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #0060BA;
+    margin: 0px;
+    padding: 6px 12px 6px 12px;
+}
+
+.div-list {
+    width: 100%;
+    margin-top: 24px;
+    gap: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+mat-checkbox {
+    margin: 0px;
+}
+
+::ng-deep .mdc-form-field {
+    align-items: flex-start !important;
+}
+
+.details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    gap: 6px;
+    opacity: 0px;
+}
+
+.details p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #1E1E1F; 
+    margin: 0px;
+
+}
+
+.text {
+    width: 256px;
+}
+
+.details button {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-button {
+    width: 360px;
+    position: fixed;
+    bottom: 0px;
+    border-top: 1px solid var(--border-logo-icon, #DFE0E1);
+    display: flex;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 40px;
+    background-color: white;
+}
+
+.footer-button button{
+    width: 328px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #0060BA;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-button button:hover {
+    background-color: #08457d;
+}

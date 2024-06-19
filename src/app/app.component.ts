@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import liff from '@line/liff';
 
 @Component({
   selector: 'app-root',

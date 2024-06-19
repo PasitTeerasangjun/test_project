@@ -1,0 +1,67 @@
+<div class="background" *ngIf="stats == true">
+    <div class="container">
+        <h1>
+            ความยินยอมเพื่อเก็บรวบรวม ใช้เปิดเผยข้อมูลส่วนบุคคล
+        </h1>
+        <div class="div-img">
+            <img src="../../assets/Consent_pdpa.png" alt="">
+        </div>
+        <div class="paragraph">
+            <p>
+                เงินติดล้อ ใส่ใจและให้ความสำคัญกับข้อมูลส่วนบุคคลของ
+                ลูกค้าเป็นอย่างยิ่ง โดยเงินติดล้อ จะเก็บบันทึก ใช้ เปิดเผย
+                ข้อมูลส่วนบุคคลของลูกค้าภายใต้เงื่อนไขดังต่อไปนี้เท่านั้น
+            </p>
+        </div>
+        <div class="container-paragraph">
+            <p>
+                คุณสามารถเลือกให้หรือไม่ให้ความยินยอมดังนี้ โดยไม่มี
+                ผลต่อการพิจารณาการใช้ผลิตภัณฑ์
+            </p>
+        </div>
+        <div class="div-list" >
+            <div class="details" *ngIf="this.consent_pdpa[0].pdpaflag_1">
+                <mat-checkbox [(ngModel)]="checkbox_ntl">
+                    <div class="text">
+                        <p>การสื่อสารทางการตลาดของเงินติดล้อ
+                            (Cross-Sell NTL)
+                        </p>
+                    </div>
+                </mat-checkbox>
+                
+                <button (click)="cross_ntl()"><img src="../../assets/icon_next.svg" alt=""></button>
+            </div>
+            <div class="details" *ngIf="this.consent_pdpa[0].pdpaflag_2">
+                <mat-checkbox [(ngModel)]="checkbox_other">
+                    <div class="text">
+                        <p>การสื่อสารทางการตลาดของกลุ่มธุรกิจ
+                            ทางการเงินและบริษัทในเครือ     
+                            (Cross-Sell Other)
+                        </p>
+                    </div>
+                </mat-checkbox>
+                <button (click)="cross_other()"><img src="../../assets/icon_next.svg" alt=""></button>
+            </div>
+            <div class="details" *ngIf="this.consent_pdpa[0].pdpaflag_3">
+                <mat-checkbox [(ngModel)]="checkbox_analytics">
+                    <div class="text">
+                        <p>การวิเคราะห์และการจัดทำสถิติ
+                            (Analytics)
+                        </p>
+                    </div>
+                </mat-checkbox>
+                <button (click)="analytics()"><img src="../../assets/icon_next.svg" alt=""></button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-button">
+        <button (click)="next()">ไปต่อ</button>
+    </div>
+
+</div>
+
+<div>
+    <app-details-pdpa *ngIf="stats == false" [name]="select" (update_stats)="get_stats($event)"></app-details-pdpa>
+</div>

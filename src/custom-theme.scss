@@ -1,0 +1,17 @@
+@use '@angular/material' as mat;
+@use '@angular/material' as mat-core;
+
+$primary: mat-core.define-palette(mat-core.$indigo-palette);
+$accent: mat-core.define-palette(mat-core.$blue-palette);
+
+$theme: mat-core.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+  )
+));
+
+@include mat.core();
+@include mat.all-component-themes($theme);
+
+

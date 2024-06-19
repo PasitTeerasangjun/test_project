@@ -1,14 +1,15 @@
 <div class="background">
+    <div class="background-head">
+        <img src="../../assets/head_background.svg" alt="">
+    </div>
+
     <div class="head-icon">
-        <div class="head-left">
-            
+        <div class="circle-icon">
+            <img src="../../assets/icon_NTL.svg" alt="">
+                
         </div>
-        <div class="head-center">
-            <mat-icon>lock</mat-icon>
-        </div>
-        <div class="head-right">
-            
-        </div>
+        <h2>ลงทะเบียนการใช้บริการ Tidlor Connect</h2>
+        
     </div>
 
     <div class="body">
@@ -16,10 +17,47 @@
     
         </div>
         <div class="body-center">
-            <h2>ลงทะเบียนการใช้บริการ Tidlor Connect</h2>
+            <div class="div-input">
+                <!-- Input -->
+                <mat-form-field appearance="outline">
+                    <mat-label>เลขบัตรประชาชน</mat-label>
+                    <input [(ngModel)]="id_show" type="text" matInput placeholder="" pattern="[0-9-]{17}" [maxlength]="17" (keypress)="numberOnly($event)" (input)="add_id($event)" (blur)="check_id()" required>
+                    <button *ngIf="this.id != ''" mat-icon-button matSuffix (click)="remove_id()">
+                        <mat-icon style="color: gray;">cancel</mat-icon>
+                    </button>
+                    <mat-error>{{error_id}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>เบอร์โทรศัพท์</mat-label>
+                    <input [(ngModel)]="phone_show" type="text" matInput placeholder="" pattern="[0-9-]{12}" [maxlength]="12" (keypress)="numberOnly($event)" (input)="add_phone($event)" (blur)="check_phone()" required>
+                    <button *ngIf="this.phone != ''" mat-icon-button matSuffix (click)="remove_phone()">
+                        <mat-icon style="color: gray;">cancel</mat-icon>
+                    </button>
+                    <mat-error>{{error_phone}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>อีเมล (ถ้ามี)</mat-label>
+                    <input matInput placeholder="" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="email" type="email" (blur)="check_email()">
+                    <button *ngIf="this.email != ''" mat-icon-button matSuffix (click)="remove_email()">
+                        <mat-icon style="color: gray;">cancel</mat-icon>
+                    </button>
+                    <mat-error>{{error_email}}</mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="div-button">
+                <button class="cancel" (click)="cancel()">ยกเลิก</button>
+
+                <!-- <button *ngIf="this.id_correct == false || this.phone_correct == false || this.email_correct == false" class="confirm_disable">ขอรหัส OTP</button> -->
+                <button  (click)="OTP()" class="confirm">ขอรหัส OTP</button>
+            </div>
+            
         </div>
         <div class="body-right">
     
         </div>
     </div>
+    <app-footer></app-footer>
 </div>
